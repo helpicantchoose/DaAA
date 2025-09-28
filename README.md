@@ -66,10 +66,10 @@ Recursion depth is managed by calling `enterRecursion()` and `exitRecursion()` a
 
 ## Recurrence Analysis
 
-- **MergeSort** ([`MergeSort`](src/main/java/com/helpicantchoose/MergeSort.java)): $T(n) = 2T(n/2) + \Theta(n)$, so $T(n) = \Theta(n \log n)$ by the Master Theorem. Depth is $O(\log n)$.
-- **QuickSort** ([`QuickSort`](src/main/java/com/helpicantchoose/QuickSort.java)): Expected $T(n) = 2T(n/2) + \Theta(n)$ (balanced), so $T(n) = \Theta(n \log n)$. Worst-case $O(n^2)$, but rare with random pivots. Depth is $O(\log n)$ on average.
-- **DeterministicSelect** ([`DeterministicSelect`](src/main/java/com/helpicantchoose/DeterministicSelect.java)): $T(n) = T(n/5) + T(7n/10) + \Theta(n)$, which solves to $T(n) = \Theta(n)$ (Akra–Bazzi). Depth is $O(\log n)$.
-- **Closest Pair** ([`ClosestPair`](src/main/java/com/helpicantchoose/ClosestPair.java)): $T(n) = 2T(n/2) + \Theta(n)$, so $T(n) = \Theta(n \log n)$. Depth is $O(\log n)$.
+- **MergeSort** ([`MergeSort`](src/main/java/com/helpicantchoose/MergeSort.java)): $T(n) = 2T(n/2) + \Theta(n)$, so $T(n) = \Theta(n \log n)$ by the Master Theorem. .
+- **QuickSort** ([`QuickSort`](src/main/java/com/helpicantchoose/QuickSort.java)): Expected $T(n) = 2T(n/2) + \Theta(n)$ (balanced), so $T(n) = \Theta(n \log n)$. Worst-case $O(n^2)$, but rare with random pivots. .
+- **DeterministicSelect** ([`DeterministicSelect`](src/main/java/com/helpicantchoose/DeterministicSelect.java)): $T(n) = T(n/5) + T(7n/10) + \Theta(n)$, which solves to $T(n) = \Theta(n)$ (Akra–Bazzi).
+- **Closest Pair** ([`ClosestPair`](src/main/java/com/helpicantchoose/ClosestPair.java)): $T(n) = 2T(n/2) + \Theta(n)$, so $T(n) = \Theta(n \log n)$.
 
 ## Plots and Empirical Results
 
