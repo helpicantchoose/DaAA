@@ -8,8 +8,10 @@ public class DeterministicSelect {
     private static int select(int[] a, int lo, int hi, int k, Metrics m) {
         while (true) {
             if (lo == hi) return a[lo];
+            m.enterRecursion();
             int pivot = medianOfMedians(a, lo, hi, m);
             int[] bounds = partition(a, lo, hi, pivot, m);
+            m.exitRecursion();
             int lt = bounds[0], gt = bounds[1];
             if (k < lt) hi = lt - 1;
             else if (k > gt) lo = gt + 1;
@@ -23,6 +25,7 @@ public class DeterministicSelect {
             insertionSort(a, lo, hi, m);
             return a[lo + n/2];
         }
+        m.enterRecursion();
         int numMedians = 0;
         for (int i = lo; i <= hi; i += 5) {
             int subHi = Math.min(i + 4, hi);
@@ -33,7 +36,10 @@ public class DeterministicSelect {
             a[medianIdx] = tmp;
             numMedians++;
         }
-        return medianOfMedians(a, lo, lo + numMedians - 1, m);
+
+        int res = medianOfMedians(a, lo, lo + numMedians - 1, m);
+        m.exitRecursion();
+        return res;
     }
 
     private static int[] partition(int[] a, int lo, int hi, int pivot, Metrics m) {

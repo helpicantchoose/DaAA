@@ -5,7 +5,6 @@ public class MergeSort {
 
     public static void sort(int[] a, Metrics m) {
         int[] aux = new int[a.length];
-        m.addAlloc(a.length);
         sort(a, aux, 0, a.length - 1, m);
     }
 
